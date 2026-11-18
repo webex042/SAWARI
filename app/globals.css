@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/*
+ * Colour and type tokens. Change a colour here and it changes everywhere.
+ * Tailwind classes use them as: bg-background, text-muted, border-border,
+ * bg-accent, text-accent-ink, bg-accent-soft, bg-surface.
+ */
+:root {
+  --background: #faf7f2;   /* warm paper */
+  --surface: #ffffff;      /* inputs, cards */
+  --foreground: #1c1917;   /* main text */
+  --muted: #5c564d;        /* secondary text */
+  --border: #e3ddd2;
+  --accent: #0f6e4f;       /* buttons, highlights */
+  --accent-ink: #ffffff;   /* text on top of accent */
+  --accent-soft: #e3f1ea;  /* gentle highlight boxes */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #14120f;
+    --surface: #1d1a16;
+    --foreground: #f2efe9;
+    --muted: #a8a29e;
+    --border: #2f2b25;
+    --accent: #4cc79a;
+    --accent-ink: #0b1f17;
+    --accent-soft: #1b3a2f;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  /* Latin font first, Hindi font for Devanagari letters, then system fallback. */
+  --font-sans: var(--font-latin), var(--font-deva), system-ui, sans-serif;
+}
+
+/* 17px base size: easier to read on small phones (plan Section 11). */
+html {
+  font-size: 17px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

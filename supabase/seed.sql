@@ -1,0 +1,15 @@
+-- =====================================================================
+-- Seed data for the LOCAL database only (runs on `npm run db:reset`).
+-- =====================================================================
+-- Intentionally empty: Sawari must not contain invented routes, stops,
+-- coordinates or fares. Real data arrives from:
+--   1. scripts/import-osm-places (OpenStreetMap place names, Day 10)
+--   2. the field-research Google Sheets (Weeks 1-3)
+--   3. volunteer rides recorded in the mapper app
+--
+-- When you have real rows, add them here in this shape, e.g.:
+--
+-- insert into public.places (name, kind, geom, source)
+-- values ('<name from field sheet>', 'station',
+--         st_setsrid(st_makepoint(<lng>, <lat>), 4326)::geography,
+--         'team_research');
